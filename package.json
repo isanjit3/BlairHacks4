@@ -1,0 +1,20 @@
+{
+  "name": "Cloud-Template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cloud-systems/Cloud-Template.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cloud-systems/Cloud-Template/issues"
+  },
+  "homepage": "https://github.com/cloud-systems/Cloud-Template#readme"
+}
