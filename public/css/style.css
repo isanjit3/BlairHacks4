@@ -1,0 +1,15 @@
+*{
+	box-sizing: border-box;
+}
+body{
+	/*background: RGB(38,38,38);*/
+	color: #485e74;
+	line-height: 1.6;
+	font-family: 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	padding: 1em;
+	font-size: 16px;
+}
+
+.card-header {
+	background-color: rgb(254, 212, 54);
+}

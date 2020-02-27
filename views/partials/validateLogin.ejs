@@ -1,0 +1,10 @@
+<script>
+    $(document).ready(function() {
+        var startLocation = '/login'
+        if(!(window.sessionStorage.token)){
+            if(window.location.href !== startLocation) {
+                window.location.replace('/')
+            }
+        }
+    })
+</script>

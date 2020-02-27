@@ -1,1 +1,81 @@
-Hello World!
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <%- include ("partials/head") %>
+
+  <style>
+    .container {
+      margin-top: 100px;
+    }
+  </style>
+
+</head>
+<body>
+    <%- include ("partials/navbar") %>
+ 
+    <div class="container  animated fadeIn">
+        <div class="title float-left">
+          <h1 class="brand"><a href="/index">Poolesville Event Sign Up</a></h1>
+        </div>
+        <div class="help-icon float-right">
+          <a href="/help"><i class="fa fa-question-circle fa-3x"></i></a>
+        </div>
+        <div class="clearfix"></div>  
+        <div class="wrapper">
+          <div class="company-info">
+            <div id="logo-wrapper">
+              <img src="/images/PoolesvilleLogo.png" alt="Logo" id="logo">
+            </div>
+          </div>
+          <div class="contact">
+            <div class="box-wrapper">
+              <div class="box">
+                <a href="/search-student">
+                  <div class="icon">
+                    <i class="fa fa-ticket-alt fa-5x"></i>
+                  </div>
+                  <div class="icon-text">
+                    New/Edit Ticket
+                  </div>
+                </a>
+              </div>
+              <div class="box">
+                <a href="/display-ticket-data">
+                  <div class="icon">
+                    <i class="fa fa-users fa-5x"></i>
+                  </div>
+                  <div class="icon-text">
+                    Display Tickets
+                  </div>
+                </a>
+              </div>
+              <div class="box">
+                <a href="/upload">
+                  <div class="icon">
+                    <i class="fa fa-cloud-upload-alt fa-5x"></i>
+                  </div>
+                  <div class="icon-text">
+                    Upload Files
+                  </div>
+                </a>
+              </div>
+              <div class="box">
+                <a href="/settings">
+                  <div class="icon">
+                    <i class="fa fa-cog fa-5x"></i>
+                  </div>
+                  <div class="icon-text">
+                    Settings
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+</body>
+
+</html>
