@@ -74,26 +74,6 @@ app.get('/', function (req, res) {
   res.render('login');
 })
 
-//Render login page
-app.get('/index', function (req, res) {
-  res.render('index');
-})
-
-app.get('/write', function (req, res) {
-    res.render('write');
-})
-
-app.post('/save', function (req, res) {
-    let formData = {
-        firstname: req.body.first_name,
-        lastname: req.body.last_name,
-        email: req.body.email
-    }
-    writeFirebase(formData);
-
-    res.status(200).send("success");
-});
-
 app.post('/login', function(req, res ) {
   let username = req.body.username; 
   let password = req.body.password;
@@ -130,36 +110,29 @@ app.post('/login', function(req, res ) {
 
 })
 
+app.post('/save', function (req, res) {
+  let formData = {
+      firstname: req.body.first_name,
+      lastname: req.body.last_name,
+      email: req.body.email
+  }
+  writeFirebase(formData);
 
+  res.status(200).send("success");
+});
 
-//Render the search student page
-app.get('/search-student', function (req, res) {
-  res.render('search-student', {
-    fbConfig: firebaseConfig
-  });
+//Render index page
+app.get('/index', function (req, res) {
+  res.render('index');
 })
 
-
-//Render the ticket entry page
-app.get('/ticket-entry', function (req, res) {
-  res.render('ticket-entry');
+app.get('/write', function (req, res) {
+    res.render('write');
 })
 
-//Render the upload files page
-app.get('/upload', function (req, res) {
-  res.render('upload');
-})
-
-//Render the display tickets page
-app.get('/display-ticket-data', function (req, res) {
-  readFirebaseTickets().then(function (data) {
-    console.log(data)
-    res.render('display-ticket-data',
-      {
-        studentsData: data
-      }
-    );
-  })
+//Render display page
+app.get('/display', function(req, res) {
+  res.render('settings');
 })
 
 //Render the settings page

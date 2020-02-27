@@ -5,23 +5,6 @@
     <%- include ("partials/head") %>
 </head>
 
-<script>
-    function openTab(evt, tabName) { //Allows different tabs to open
-        var tabcontent = document.getElementsByClassName("tabcontent");
-        for (var i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
-        }
-
-        var tablinks = document.getElementsByClassName("tablinks");
-        for (var i = 0; i < tablinks.length; i++) {
-            tablinks[i].className = tablinks[i].className.replace(" active", "");
-        }
-
-        document.getElementById(tabName).style.display = "block";
-        evt.currentTarget.className += " active";
-    }
-</script>
-
 <style>
 
     #help{
@@ -91,20 +74,18 @@
                             <div class="menu help-menu">
                                 <div class="tab">
                                     <button class="tablinks" onclick="openTab(event, 'help')">Welcome</button>
-                                    <button class="tablinks" onclick="openTab(event, 'upload')">Upload Data</button>
+                                    <button class="tablinks" onclick="openTab(event, 'upload')">Help1</button>
                                     <button class="tablinks" onclick="openTab(event, 'settings')">Database and Settings</button>
                                     <button class="tablinks" onclick="openTab(event, 'search')">New/Edit Tickets by Student Search</button>
                                     <button class="tablinks" onclick="openTab(event, 'entry')">Completing the Ticket Form</button>
                                     <button class="tablinks" onclick="openTab(event, 'export')">Viewing Tickets and Exporting Data</button>
                                 </div>
-
-                                <div id="help" class="tabcontent">
+                                <div class="tabcontent" id="help">
                                     <h3>Welcome</h3>
                                     <p>Welcome to the Student Event Sign Up Application! 
                                         Click on the tabs to the left for help and information.</p>
                                 </div>
-
-                                <div id="upload" class="tabcontent">
+                                <div class="tabcontent" id="upload">
                                     <h3>Upload Data</h3>
                                     <h5>Student Data</h5>
                                     <p>To upload the student data file, select the "Students" option and click "Choose 
@@ -112,9 +93,8 @@
                                     <h5>Obligations Data</h5>
                                     <p>To upload the obligations data file, select the "Obligations" option and click 
                                         "Choose file" to select which file (.csv) to upload. Then, submit.</p>
-                                </div>
-                                
-                                <div id="settings" class="tabcontent">
+                                </div>  
+                                <div class="tabcontent" id="settings">
                                     <h3>Database and Settings</h3>
                                     <h5>Resetting Database Collections</h5>
                                     <p>Clicking the "Reset Database" will produce a pop-up with several options of which 
@@ -131,8 +111,7 @@
                                         and the maximum can be reverted back to default by resetting the settings 
                                         collection (see "Resetting Database Collections").</p>
                                 </div>
-
-                                <div id="search" class="tabcontent">
+                                <div class="tabcontent" id="search">
                                     <h3>New/Edit Tickets by Student Search</h3>
                                     <p>To create a new or edit a previously submitted ticket entry, enter student ID, 
                                         search by last name, or scan student ID. Clicking submit will lead to the ticket 
@@ -154,8 +133,7 @@
                                         selected/on focus. (The student ID field is selected automatically once the page loads.) 
                                         Then, use the barcode scanner to scan the student's ID. </p>
                                 </div>
-
-                                <div id="entry" class="tabcontent">
+                                <div class="tabcontent" id="entry">
                                     <h3>Completing the Ticket Form</h3>
                                     <p>Upon loading, the student ID, last name, first name, middle initial, and grade fields will 
                                         be populated given a student ID from the previous Search Student page. Complete the other fields to save. 
@@ -191,8 +169,7 @@
                                     </p>
 
                                 </div>
-
-                                <div id="export" class="tabcontent">
+                                <div class="tabcontent" id="export">
                                     <h3>Viewing Tickets and Exporting Data</h3>
                                     <p>The "Display Tickets" page displays all ticket data in a table sorted by ticket number.</p>
                                     <h5>Exporting Ticket Data</h5>
@@ -209,5 +186,22 @@
         </div>
     </div>
 </body>
+
+<script>
+    function openTab(evt, tabName) { //Allows different tabs to open
+        var tabcontent = document.getElementsByClassName("tabcontent");
+        for (var i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+
+        var tablinks = document.getElementsByClassName("tablinks");
+        for (var i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+</script>
 
 </html>
