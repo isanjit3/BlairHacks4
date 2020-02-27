@@ -2,9 +2,9 @@
   "name": "Cloud-Template",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -16,5 +16,13 @@
   "bugs": {
     "url": "https://github.com/cloud-systems/Cloud-Template/issues"
   },
-  "homepage": "https://github.com/cloud-systems/Cloud-Template#readme"
+  "homepage": "https://github.com/cloud-systems/Cloud-Template#readme",
+  "dependencies": {
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "firebase": "^7.9.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
 }
