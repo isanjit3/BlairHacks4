@@ -68,22 +68,12 @@ function readFirebase() {
   });
 }
 
-function verifyJWT(req) {
-  var token = req.headers['x-access-token'];
-  if (!token) return res.status(401).send({ auth: false, message: 'No token provided.' });
-  
-  jwt.verify(token, config.secret, function(err, decoded) {
-    if (err) return res.status(500).send({ auth: false, message: 'Failed to authenticate token.' });
-    
-    res.status(200).send(decoded);
-  });
-}
-
 //Render main page
-app.get('/', function (req, res) {
+app.get('/', function(req, res) {
   res.render('login');
 })
 
+//Post from login page
 app.post('/login', function(req, res ) {
   let username = req.body.username; 
   let password = req.body.password;
@@ -121,11 +111,11 @@ app.post('/login', function(req, res ) {
 })
 
 //Render index page
-app.get('/index', function (req, res) {
+app.get('/index', function(req, res) {
   res.render('index');
 })
 
-app.get('/write', function (req, res) {
+app.get('/write', function(req, res) {
     res.render('write');
 })
 
@@ -135,13 +125,18 @@ app.get('/display', function(req, res) {
 })
 
 //Render the settings page
-app.get('/settings', function (req, res) {
+app.get('/settings', function(req, res) {
   res.render('settings');
 })
 
 //Render the help page
-app.get('/help', function (req, res) {
+app.get('/help', function(req, res) {
   res.render('help');
+})
+
+//Render the links page
+app.get('/links', function(req, res) {
+  res.render('links')
 })
 
 //Listen for web application on Localhost:3000
