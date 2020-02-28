@@ -21,12 +21,29 @@ var firebaseConfig = {
 };
 firebase.initializeApp(firebaseConfig);
 
+//Setup ejs view engine
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, '/views'));
+app.use(express.static('public'));
+app.use(bodyParser.urlencoded({ extended: true }));
+
 //Write data to Firebase
 function writeFirebase(jsonData) {
   var database = firebase.database();
-  var ref = firebase.database().ref.child("/people");
-  ref.push(jsonData);
+  var ref = database.ref("people/" + jsonData.firstname);
+  ref.set(jsonData);
 }
+
+app.post('/save', function (req, res) {
+  let formData = {
+      firstname: req.body.first_name,
+      lastname: req.body.last_name,
+      email: req.body.email
+  }
+  writeFirebase(formData);
+
+  res.status(200).send("success");
+});
 
 //Read data from Firebase
 function readFirebase() {
@@ -61,13 +78,6 @@ function verifyJWT(req) {
     res.status(200).send(decoded);
   });
 }
-
-//Setup ejs view engine
-app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, '/views'));
-app.use(express.static('public'));
-app.use(bodyParser.urlencoded({ extended: true }));
-
 
 //Render main page
 app.get('/', function (req, res) {
@@ -110,17 +120,6 @@ app.post('/login', function(req, res ) {
 
 })
 
-app.post('/save', function (req, res) {
-  let formData = {
-      firstname: req.body.first_name,
-      lastname: req.body.last_name,
-      email: req.body.email
-  }
-  writeFirebase(formData);
-
-  res.status(200).send("success");
-});
-
 //Render index page
 app.get('/index', function (req, res) {
   res.render('index');
@@ -132,7 +131,7 @@ app.get('/write', function (req, res) {
 
 //Render display page
 app.get('/display', function(req, res) {
-  res.render('settings');
+  res.render('display');
 })
 
 //Render the settings page

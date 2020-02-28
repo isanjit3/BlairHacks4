@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include ("partials/head") %>
+</head>
+<body>
+  <%- include ("partials/navbar") %>
+  <div class="container p-3 animated fadeIn">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">
+            <div class="float-right">
+                <button class="btn btn-md btn-primary text-center" onclick="exportTableToCSV('tickets.csv')"><i
+                    class="fa fa-cloud-download-alt"></i> Export Data</button>
+              </div>
+            <div class="float-right" style="padding-right: 20px;">
+                <p id="total">Total Tickets: </p>
+            </div>
+          <h5>Tickets</h5>
+        </div>
+      </div>
+      <div class="card-body">
+        <table id="data" class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">First Name</th>
+              <th scope="col">Last Name</th>
+              <th scope="col">Email</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Larry</td>
+              <td>the Bird</td>
+              <td>@twitter</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+ </div>
+</body>
+</html>
